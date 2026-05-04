@@ -1,0 +1,41 @@
+def selection_sort(nilai):
+    n = len(nilai)
+    for i in range(n - 1):
+        max_index = i
+        for j in range(i + 1, n):
+            if nilai[j] > nilai[max_index]:
+                max_index = j
+        
+        if max_index != i:
+            nilai[i], nilai[max_index] = nilai[max_index], nilai[i]
+
+
+def main():
+    try:
+        n = int(input("Masukkan jumlah siswa: "))
+    except ValueError:
+        print("Input tidak valid!")
+        return
+
+    nilai = []
+    print("Masukkan nilai siswa:")
+    for i in range(n):
+        while True:
+            try:
+                x = int(input(f"Nilai siswa ke-{i+1}: "))
+                nilai.append(x)
+                break
+            except ValueError:
+                print("Harus angka!")
+
+    print("\nNilai sebelum diurutkan:", nilai)
+
+    selection_sort(nilai)
+
+    print("\nNilai setelah diurutkan (Ranking):")
+    for i in range(n):
+        print(f"Peringkat {i+1}: {nilai[i]}")
+
+
+if __name__ == "__main__":
+    main()
