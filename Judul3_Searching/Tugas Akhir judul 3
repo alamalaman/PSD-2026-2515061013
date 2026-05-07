@@ -1,0 +1,50 @@
+def binary_search(arr, n, target):
+    l = 0
+    r = n - 1
+    pos = -1
+    while l <= r:
+        m = l + (r - l) // 2
+        print(f"Memeriksa indeks ke-{m}, kode buku: {arr[m]}")
+        if arr[m] == target:
+            pos = m
+            break
+        elif arr[m] < target:
+            print("Mencari di rak sebelah kanan")
+            l = m + 1
+        else:
+            print("Mencari di rak sebelah kiri")
+            r = m - 1
+    return pos
+
+
+def main():
+    try:
+        n = int(input("Masukkan jumlah kode buku: "))
+    except ValueError:
+        print("Input tidak valid!")
+        return
+    arr = []
+    print("Masukkan kode buku secara urut menaik:")
+    for i in range(n):
+        while True:
+            try:
+                nilai = int(input(f"Kode buku ke-{i+1}: "))
+                arr.append(nilai)
+                break
+            except ValueError:
+                print("Input harus berupa angka!")
+    print(f"\nDaftar kode buku: {arr}")
+    while True:
+        try:
+            target = int(input("Masukkan kode buku yang ingin dicari: "))
+            break
+        except ValueError:
+            print("Input tidak valid!")
+    pos = binary_search(arr, n, target)
+    if pos != -1:
+        print(f"\nBuku ditemukan pada indeks ke-{pos}")
+    else:
+        print("\nBuku tidak ditemukan")
+
+if __name__ == "__main__":
+    main()
