@@ -291,3 +291,8 @@ sehingga pasien yang datang lebih dulu akan dipanggil lebih dulu.
 - Program berhasil mengimplementasikan struktur data Queue.
 - Sistem antrian berjalan sesuai urutan kedatangan pasien.
 - Implementasi ini sesuai dengan sistem antrian nyata di rumah sakit atau layanan publik.
+
+---
+
+### Link Youtube
+https://youtu.be/RiJ5iN7wPEc
